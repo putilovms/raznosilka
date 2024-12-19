@@ -5,8 +5,8 @@
     <!-- Имя пользователя БД -->
     <user>root</user>
     <!-- Пароль к БД -->
-    <pass/>
+    <pass>password</pass>
     <!-- DSN строка для PDO объекта -->
-    <dsn>mysql:host=192.168.1.36:3306;dbname=raznosilka</dsn>
+    <dsn>mysql:host=mysql:3306;dbname=raznosilka</dsn>
   </db>
 </config>
