@@ -1,0 +1,22 @@
+AddDefaultCharset off
+
+RewriteEngine on
+
+#Нет доступа
+ErrorDocument 403 /errors/403.html
+#Ошибка сервера
+ErrorDocument 500 /errors/500.html
+
+#Редирект без WWW
+RewriteCond %{HTTP_HOST} ^www\.raznosilka\.ru$ [NC]
+RewriteRule ^(.*)$ http://raznosilka.ru/$1 [L,R=301]
+
+#Редирект на HTTPS
+RewriteCond %{HTTP_HOST} ^raznosilka\.ru$
+RewriteCond %{HTTPS} off
+RewriteRule (.*) https://raznosilka.ru/$1 [L,R]
+
+#Все пути на роутер
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]

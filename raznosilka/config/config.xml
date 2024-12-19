@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+  <!--Настройки для доступа к БД-->
+  <db>
+    <!-- Имя пользователя БД -->
+    <user>root</user>
+    <!-- Пароль к БД -->
+    <pass/>
+    <!-- DSN строка для PDO объекта -->
+    <dsn>mysql:host=192.168.1.36:3306;dbname=raznosilka</dsn>
+  </db>
+</config>

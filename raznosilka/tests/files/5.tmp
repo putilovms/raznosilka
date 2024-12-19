@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<!--File Created By SMS Backup & Restore v7.30 on 03/04/2015 09:36:18-->
+<?xml-stylesheet type="text/xsl" href="sms.xsl"?>
+<smses count="2">
+  <sms protocol="0" address="900" date="1428038886899" type="1" subject="null" body="Сбербанк Онлайн. ЕКАТЕРИНА АЛЕКСАНДРОВНА Л. перевел(а) Вам 314.00 RUB" toa="null" sc_toa="null" service_center="+79262000287" read="1" status="-1" locked="0" date_sent="1428038877000" readable_date="03 апр. 2015 г. 9:28:06" contact_name="(Unknown)" />
+  <sms protocol="0" address="900" date="1428038893460" type="1" subject="null" body="VISA6815 03.04.15 08:27 зачисление 314р SBOL s karty 4276****9913 Баланс: 82747.08р" toa="null" sc_toa="null" service_center="+79262000287" read="1" status="-1" locked="0" date_sent="1428038882000" readable_date="03 апр. 2015 г. 9:28:13" contact_name="(Unknown)" />
+</smses>

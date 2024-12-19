@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+  <!-- Требуется ли активация новых аккаунтов -->
+  <setting settings_name="activate_account" settings_value="1" />
+  <!-- Разрешена ли регистрация новых аккаунтов -->
+  <setting settings_name="register_account" settings_value="1" />
+  <!-- Системная почта -->
+  <setting settings_name="system_email" settings_value="robot@raznosilka.ru" />
+  <!-- Режим работы сайта: debug - отладка, normal - рабочий режим, service - обслуживание -->
+  <setting settings_name="mode" settings_value="normal" />
+  <!-- При запросе к сайту СП, получать данные из кэша в режиме отладки -->
+  <setting settings_name="load_from_cache" settings_value="1" />
+
+  <!-- Путь к шаблонам -->
+  <setting settings_name="tpl_path" settings_value="/templates" />
+  <!-- Путь к шаблонам для писем -->
+  <setting settings_name="tpl_mail_path" settings_value="/mail" />
+  <!-- Путь к слоям -->
+  <setting settings_name="layer_path" settings_value="/layer" />
+  <!-- Путь к временным файлам -->
+  <setting settings_name="tmp_path" settings_value="/tmp" />
+  <!-- Путь к кэшу данных от сайта СП (нужен для получения данных без обращению к сайту СП) -->
+  <setting settings_name="tmp_cache_path" settings_value="/tmp/cache" />
+
+  <!-- Последний запуск хрона -->
+  <setting settings_name="cron_last_run" settings_value="0000-00-00 00:00:00" />
+  <!-- Последний запуск рассылки писем -->
+  <setting settings_name="delivery_last_run" settings_value="0000-00-00 00:00:00" />
+  <!-- Последний запуск рассылки писем -->
+  <setting settings_name="log_archive_last_run" settings_value="0000-00-00 00:00:00" />
+
+  <!-- Последний запуск рассылки писем -->
+  <setting settings_name="payment_system" settings_value="3" />
+
+  <!-- ID расширения Google Chrome -->
+  <setting settings_name="chrome_extension_id" settings_value="fomejfjbnnoaiflplpdlbdnmjmhbicdf" />
+</settings>

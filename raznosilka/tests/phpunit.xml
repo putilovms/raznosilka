@@ -1,0 +1,6 @@
+<phpunit colors="true">
+  <logging>
+    <log type="coverage-html" target="Z:\project\Raznosilka\tests" charset="UTF-8"/>
+  </logging>
+</phpunit>
+

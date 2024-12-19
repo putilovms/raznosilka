@@ -1,0 +1,34 @@
+{
+  "manifest_version": 2,
+  "name": "Raznosilka (Local)",
+  "version": "1.2.1",
+  "description": "Вспомогательное расширение для сервиса «Разносилка», которое позволяет автомтического проставлять оплаты на сайт СП.",
+  "author": "Путилов Михаил",
+  "icons": {
+    "128": "login.png"
+  },
+  "background": {
+    "scripts": [
+      "js/settings.js",
+      "js/CheckStatus.js",
+      "js/eventPage.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "Пожалуйста, войдите в «Разносилку»",
+    "default_icon": "not_login.png"
+  },
+  "permissions": [
+    "cookies",
+    "*://*/*"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://raznosilka.ru/*",
+      // Для тестирования
+      "http://raznosilka/*",
+      "https://raznosilka/*"
+    ]
+  }
+}
