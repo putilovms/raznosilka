@@ -10,17 +10,24 @@
  * Инициализация
  */
 
-define('CONFIG_PATH', $_SERVER['DOCUMENT_ROOT'] . "/config/config.xml"); // Путь к настройкам
-define('CLASSES_PATH', $_SERVER['DOCUMENT_ROOT'] . "/classes"); // Путь к классам
-define('DATA_PATH', $_SERVER['DOCUMENT_ROOT'] . "/resources/data"); // Путь к ресурсам
-define('LOGS_PATH', $_SERVER['DOCUMENT_ROOT'] . "/logs"); // Путь к логам
+/** 
+ * Задаём путь к каталогу с проектом вручную,  
+ * так как переменная $_SERVER['DOCUMENT_ROOT'] 
+ * при запуске из консоли пуста
+ */
+define('PUBLIC_PATH', dirname(__DIR__) . '/html');
+
+define('CONFIG_PATH', PUBLIC_PATH . "/config/config.xml"); // Путь к настройкам
+define('CLASSES_PATH', PUBLIC_PATH . "/classes"); // Путь к классам
+define('DATA_PATH', PUBLIC_PATH . "/resources/data"); // Путь к ресурсам
+define('LOGS_PATH', PUBLIC_PATH . "/logs"); // Путь к логам
 
 errorToLog();
 
 // Подключение констант с именами полей таблиц
-require_once $_SERVER['DOCUMENT_ROOT'] . "/resources/const.php";
+require_once PUBLIC_PATH . "/resources/const.php";
 // Подключить вспомогательную библиотеку
-require_once $_SERVER['DOCUMENT_ROOT'] . "/classes/Kit.php";
+require_once PUBLIC_PATH . "/classes/Kit.php";
 
 // Установка дерикторий include_path
 set_include_path(CLASSES_PATH . PATH_SEPARATOR . get_include_path());
@@ -151,7 +158,7 @@ function adminAdd (DataBase $db) {
   if ($countUsers == 0) {
     $user[USER_LOGIN] = 'admin';
     $user[USER_EMAIL] = 'putilovms@yandex.ru';
-    $user[USER_PASSWORD] = '12345';
+    $user[USER_PASSWORD] = '12345'; // Тут должно быть кодирование пароля
     $user[USER_REG_DATE] = strftime('%Y-%m-%d %H:%M:%S', time());
     $user[USER_ACTIVATE] = 1;
     $user[SP_ID] = 1; 
@@ -309,21 +316,21 @@ function updateTable (PDO $pdo, DataBase $db) {
  */
 function updateFileSystem () { // todo можно сделать добавление/удаленеи в цикле, и добавлять только пути в массив
   // Удалить ненужный файл
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/templates/error/blocked.tpl.php';
+  $path = PUBLIC_PATH . '/templates/error/blocked.tpl.php';
   if (file_exists($path)) {
     @unlink($path);
   }
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/templates/user/binding.tpl.php';
+  $path = PUBLIC_PATH . '/templates/user/binding.tpl.php';
   if (file_exists($path)) {
     @unlink($path);
   }
   // Создать каталоги
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/logs/archive';
+  $path = PUBLIC_PATH . '/logs/archive';
   if (!file_exists($path)) {
     mkdir($path, 0755, true);
   }
   // Удалить ненужный каталог с файлами
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/resources/templates';
+  $path = PUBLIC_PATH . '/resources/templates';
   if (file_exists($path)) {
     Kit::deleteFiles_r($path);
   }
@@ -331,16 +338,16 @@ function updateFileSystem () { // todo можно сделать добавле�
   // update 2.14
 
   // Удалить дубли шаблонов после переименования
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/add.tpl.php';
+  $path = PUBLIC_PATH . '/templates/admin/add.tpl.php';
   if (file_exists($path)) {
     @unlink($path);
   }
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/templates/admin/import.tpl.php';
+  $path = PUBLIC_PATH . '/templates/admin/import.tpl.php';
   if (file_exists($path)) {
     @unlink($path);
   }
   // удалить ненужный больше файл с сайтами СП
-  $path = $_SERVER['DOCUMENT_ROOT'] . '/resources/data/sp.xml';
+  $path = PUBLIC_PATH . '/resources/data/sp.xml';
   if (file_exists($path)) {
     @unlink($path);
   }

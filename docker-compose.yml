@@ -3,10 +3,15 @@ version: '3'
 services:
   backend:
     build: .
-    volumes:
-      - ./raznosilka:/var/www/html
+    restart: always
     ports:
       - '8080:80'
+    # command: curl backend/update.php
+    # command: bash -c "php update.php && service apache2 start"
+    depends_on:
+      - mysql
+    volumes:
+      - ./raznosilka:/var/www/html
 
   mysql:
     image: mysql:5.7
@@ -14,7 +19,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: raznosilka
-    command: --sql-mode="ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION"
+    command: --sql-mode='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION'
     volumes:
       - mysql_data:/var/lib/mysql
 
