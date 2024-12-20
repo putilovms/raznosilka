@@ -7,7 +7,7 @@
   <!-- Системная почта -->
   <setting settings_name="system_email" settings_value="robot@raznosilka.ru" />
   <!-- Режим работы сайта: debug - отладка, normal - рабочий режим, service - обслуживание -->
-  <setting settings_name="mode" settings_value="normal" />
+  <setting settings_name="mode" settings_value="debug" />
   <!-- При запросе к сайту СП, получать данные из кэша в режиме отладки -->
   <setting settings_name="load_from_cache" settings_value="1" />
 

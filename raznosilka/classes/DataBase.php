@@ -204,12 +204,13 @@ class DataBase {
    * @throws Exception
    */
   public function encodePassword ($pass) {
-    $pass = iconv('UTF-8', 'WINDOWS-1251', $pass);
-    $result = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $pass, MCRYPT_MODE_ECB);
-    if ($result === false) {
-      throw new Exception('Не удалось зашифровать пароль');
-    }
-    $result = base64_encode($result);
+    $result = $pass;
+    // $pass = iconv('UTF-8', 'WINDOWS-1251', $pass);
+    // $result = mcrypt_encrypt(MCRYPT_RIJNDAEL_128, $this->key, $pass, MCRYPT_MODE_ECB);
+    // if ($result === false) {
+    //   throw new Exception('Не удалось зашифровать пароль');
+    // }
+    // $result = base64_encode($result);
     return $result;
   }
 
@@ -248,17 +249,15 @@ class DataBase {
    */
   public function decodePassword ($pass) {
     $result = $pass;
-    if (!empty($pass)) {
-      $pass = base64_decode($pass);
-      $result = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, $pass, MCRYPT_MODE_ECB);
-      if ($result === false) {
-        throw new Exception('Не удалось расшифровать пароль');
-      }
-      // $result = str_replace("\0","",$result);
-      $result = rtrim($result, "\0");
-      $result = iconv('WINDOWS-1251', 'UTF-8', $result);
-    }
-
+    // if (!empty($pass)) {
+    //   $pass = base64_decode($pass);
+    //   $result = mcrypt_decrypt(MCRYPT_RIJNDAEL_128, $this->key, $pass, MCRYPT_MODE_ECB);
+    //   if ($result === false) {
+    //     throw new Exception('Не удалось расшифровать пароль');
+    //   }
+    //   $result = rtrim($result, "\0");
+    //   $result = iconv('WINDOWS-1251', 'UTF-8', $result);
+    // }
     return $result;
   }
 

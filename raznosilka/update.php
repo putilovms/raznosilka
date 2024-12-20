@@ -154,7 +154,7 @@ function adminAdd (DataBase $db) {
     $user[USER_PASSWORD] = '12345';
     $user[USER_REG_DATE] = strftime('%Y-%m-%d %H:%M:%S', time());
     $user[USER_ACTIVATE] = 1;
-    $user[SP_ID] = 0; // возможно тут ошибка, кажется должно быть 1
+    $user[SP_ID] = 1; 
     $user[USER_FILLING_DAY] = 2;
     $user[USER_TIME_ZONE] = 'Europe/Samara';
     $user[USER_REQUEST] = REQUEST_CURL;

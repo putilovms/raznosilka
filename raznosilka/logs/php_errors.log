@@ -1,0 +1,13 @@
+[19-Dec-2024 19:32:08 Europe/Moscow] PHP Fatal error:  Call to undefined function mcrypt_encrypt() in /var/www/html/classes/DataBase.php on line 208
+[19-Dec-2024 19:33:30 Europe/Moscow] PHP Fatal error:  Call to undefined function mcrypt_encrypt() in /var/www/html/classes/DataBase.php on line 208
+[19-Dec-2024 19:35:37 Europe/Moscow] PHP Fatal error:  Call to undefined function mcrypt_encrypt() in /var/www/html/classes/DataBase.php on line 208
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  fopen(/var/www/html/tmp/fdcd6abd5d1e3d0a7311aa3cb9c686b9.header): failed to open stream: Permission denied in /var/www/html/classes/Site.php on line 358
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  curl_setopt(): supplied argument is not a valid File-Handle resource in /var/www/html/classes/Site.php on line 366
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  Curl error #6: Could not resolve host: test.ruucp.php in /var/www/html/classes/Site.php on line 373
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/html/classes/Site.php on line 378
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  file_get_contents(/var/www/html/tmp/fdcd6abd5d1e3d0a7311aa3cb9c686b9.header): failed to open stream: No such file or directory in /var/www/html/classes/Site.php on line 380
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  fopen(/var/www/html/tmp/fdcd6abd5d1e3d0a7311aa3cb9c686b9.header): failed to open stream: Permission denied in /var/www/html/classes/Site.php on line 437
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  curl_setopt(): supplied argument is not a valid File-Handle resource in /var/www/html/classes/Site.php on line 445
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  Curl error #6: Could not resolve host: test.ruucp.php in /var/www/html/classes/Site.php on line 460
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  fclose() expects parameter 1 to be resource, boolean given in /var/www/html/classes/Site.php on line 465
+[19-Dec-2024 22:14:38 Europe/Samara] PHP Warning:  file_get_contents(/var/www/html/tmp/fdcd6abd5d1e3d0a7311aa3cb9c686b9.header): failed to open stream: No such file or directory in /var/www/html/classes/Site.php on line 467
