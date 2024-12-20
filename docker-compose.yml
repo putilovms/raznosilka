@@ -7,7 +7,7 @@ services:
     ports:
       - '8080:80'
     # command: curl backend/update.php
-    # command: bash -c "php update.php && service apache2 start"
+    # command: php update.php
     depends_on:
       - mysql
     volumes:
